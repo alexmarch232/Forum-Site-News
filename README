@@ -1,4 +1,40 @@
 
+ПРЕЖДЕ ЧЕМ НАЧАТЬ РАБОТУ ПРОВЕРЬ КОНФИГУРАЦИИ ВИРТУАЛЬНОГО СЕРВЕРА
+
+В ДИРЕКТОРИИ /etc/apache2/sites-available ИМЕЮТСЯ КОНФИГУРАЦИИ ДЛЯ РАБОТЫ С ЛАРАВЕЛ И КОНФИГИ ПО УМОЛЧАНИЮ
+
+ПРИМЕР => что бы начать работу с Проектами написанными под LARAVEL, необходимо 
+	1. привелегии для рабочей директории Проекта:
+	   	sudo chgrp -R www-data /var/www/html/your-project
+	   	sudo chmod -R 775 /var/www/html/your-project/storage
+	2. перейти в директорию /etc/apache2/sites-available и создать файл конфигураций 
+	   	sudo nano your-project.conf
+			<VirtualHost *:80>
+    				ServerName your_project_domain.org
+
+    				ServerAdmin webmaster@localhost
+    				DocumentRoot /var/www/html/your-project/public
+
+    				<Directory /var/www/html/your-project>
+        				AllowOverride All
+    				</Directory>
+
+    				ErrorLog ${APACHE_LOG_DIR}/error.log
+    				CustomLog ${APACHE_LOG_DIR}/access.log combined
+			 </VirtualHost>
+	3. выпилить актуальные конфиги и запилить необходимые 
+		sudo a2dissite 000-default.conf
+		sudo a2ensite your-project.conf
+		sudo a2enmod rewrite
+		sudo service apache2 restart
+
+
+https://www.howtoforge.com/tutorial/install-laravel-on-ubuntu-for-apache/
+
+
+
+
+
 Educational Project consist of Database, frontend and backend.
 
 Languages and technologies:
@@ -13,3 +49,5 @@ Languages and technologies:
 Need to create a board with Tasks, descriptions and possible solutions.
 
 How to move it on php-framewok such as Laravel?
+
+
