@@ -32,10 +32,18 @@
 https://www.howtoforge.com/tutorial/install-laravel-on-ubuntu-for-apache/
 
 
+HOW BEGIN WORK WITH GITHUB:
+	1. git init
+	2. git remote add origin https://github.com/alexmarch232/Forum-Site-News.git
+	3. touch README
+	   git add README
+	4. git add (all other files)
+	   git commit -m 'reinitialized files'
+	5. git push origin master --force  # <- caution, --force can delete others work.
+INFO => https://stackoverflow.com/questions/4181861/src-refspec-master-does-not-match-any-when-pushing-commits-in-git?page=1&tab=votes#tab-top
 
 
-
-Educational Project consist of Database, frontend and backend.
+DESCRIBE Educational Project consist of Database, frontend and backend.
 
 Languages and technologies:
   - PHP
