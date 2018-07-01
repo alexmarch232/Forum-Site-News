@@ -1,0 +1,82 @@
+body {
+	margin: 0 auto;
+	padding: 0;
+	width: 1000px;
+	font: 75%/120% Arial, Helvetica, sans-serif;
+}
+
+a:focus {
+	outline: none;
+}
+
+#panel {
+	background: #CC33FF;
+	height: 80px;
+	display: none;
+	width: 40%;
+	margin-left: 30%;
+}
+
+.slide {
+	margin: 0;
+	padding: 0;
+	border-top: solid 5px #13ed13;
+	background-color: #FF0000 center top;
+	width: 40%;
+	margin-left: 30%;
+}
+
+.btn_slide {
+	background: #13ed13 no-repeat right -550px;
+	text-align: center;
+	width: 150px;
+	height: 40px;
+	padding: 20px 20px 0 0;
+	margin: 0 auto;
+	display: block;
+	font: bold 120%/100% Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: none;
+}
+
+.active {
+	background-position: right 15px;
+}
+
+
+#btn_play {
+	background-color: #CC33FF;
+}
+
+#test {
+	color: red;
+	border: 1px solid black;
+	width: 60px;
+	position: absolute;
+	left: 80%;
+	bottom: 90%;
+	
+}
+#aaa {
+	color: red;
+	border: 1px solid black;
+	width: 60px;
+	position: absolute;
+	left: 80%;
+	bottom: 90%;
+}
+
+#clock {
+	
+	color: #CC33FF;
+	border: 1px solid black;
+	font-size: 150%;
+	position: absolute;
+	left: 95%;
+	top: 95%;
+}
+
+.toggler { width: 500px; height: 200px; }
+	#button { padding: .5em 1em; text-decoration: none; }
+	#effect { width: 240px; height: 135px; padding: 0.4em; position: relative; }
+	#effect h3 { margin: 0; padding: 0.4em; text-align: center; }

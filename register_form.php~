@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta name="alexmarch232" content="root" charset="utf-8" />
+		<title>Register form</title>		
+	</head>
+
+	<body>
+		<?php
+			
+			include_once 'connectDB.php';
+			include_once 'sessionDB.php';			
+			
+			if( !empty($errors) ) {
+				foreach ($errors as $error) {
+					print_r($error);
+					 echo $error['name']. "<br />",$error['password']. "<br />",$error['mail']. "<br />";				
+				}		
+			}		
+		?>	
+	
+		<h1>Register page</h1><br />
+		
+		<form method="POST" action="register_db.php">
+			<input type="text" name="name" value="<?php echo (!empty($_POST['name']))?$_POST['name']:false;?>" /><br />
+			<input type="password" name="password" value="<?php echo (!empty($_POST['password']))?$_POST['password']:false;?>" /><br />
+			<input type="text" name="mail" value="<?php echo (!empty($_POST['mail']))?$_POST['mail']:false;?>" /><br />
+			<input type="submit" name="send" value="Register" /><br />
+		</form>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<?php
+
+	
+	$nn = mysql_real_escape_string($__POST['name']);
+	$tt = mysql_real_escape_string($__POST['title']);
+	$mt = mysql_real_escape_string($__POST['mytext']);
+	$menu = mysql_real_escape_string($__POST['menu']);
+	$show = mysql_real_escape_string($__POST['show']);
+	
+	$sql = "INSERT INTO pages (name_page, descript_page, text_page, menu, show) 
+				VALUES ('".$nn."', '".$tt."', '".$mt."', '".$menu."', '".$show."'
+				)";
+	
+
+	
+?>

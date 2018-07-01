@@ -1,0 +1,79 @@
+<?php
+
+	include_once 'connectDB.php';
+	include_once 'sessionDB.php';
+	
+	$errors = array();
+	
+	/* Если значение переданное ПОСТ отлично от НУЛЛ && метод == ПОСТ */
+	if(isset($_POST['send'])&&$_SERVER['REQUEST_METHOD']=="POST") {
+		if(strlen($_POST['name'])<3) {		
+			$errors['name'] = "Error login!";		
+		} if(strlen($_POST['password']<3)) {// Если длина строки < 3
+			$errors['password'] = "Error password!";
+		} if(strlen($_POST['mail'])<5) {
+			$errors['mail'] = "Error e-mail!";
+		}
+		
+		
+		if(empty($errors)) {// Если массив ошибок пуст
+		
+		/* Получение содержимого поля формы и отправление соот. запроса в БД, с целью проверки на предмет совпадений 
+		   т.к. невозможна регистрация по уже имеющимуся имени или е-мэил */
+		   
+			/* 1. Проверка логина */			
+			$sql = "SELECT * FROM users
+					WHERE name = '".trim(htmlentities($_POST['name']))."'";// trim - удаляет пробелы, htmlelementities - преобразует все возможные символы в соответствующие HTML-сущности
+			$login = mysql_fetch_assoc(mysql_query($sql));
+			/**********************/
+			/* 2. Проверка почты */
+			$sql_m = "SELECT * FROM users
+					WHERE mail = '".trim(htmlentities($_POST['mail']))."'";
+			$mail = mysql_fetch_assoc(mysql_query($sql_m));
+			/**********************/
+		/************************************************************************************************************/
+		
+			if(empty($login['name'])&&empty($mail['mail'])) {// Если в базе нет такого имени и е-мэила
+				$sql1 = "INSERT INTO user VALUES ('',
+													'".trim(htmlentities($_POST['name']))."',
+													'".md5($_POST['password'])."',
+													'".trim(htmlentities($_POST['mail']))."'
+															  )";
+				
+				if(mysql_query($sql1)) {// $_SERVER['PHP_SELF'];
+					header("Location:http://localhost/site/login_db.php");
+				}	
+				
+			} else {
+				$errors['login'] = "Login isset!";
+			}
+		
+		}//echo  $_SERVER['PHP_SELF'];
+		
+	}
+
+?>
+
+<html>
+	<head>
+		<meta name="alexmarch232" content="root" charset="utf-8" />
+		<title>Register form</title>		
+	</head>
+
+	<body>
+		<?php if(!empty($errors)) {
+					foreach ($errors as $error) {
+					print_r($error); //echo $error['name']. "<br />",$error['password']. "<br />",$error['mail']. "<br />";				
+					}		
+				}?>	
+	
+		<h1>Register page</h1><br />
+		
+		<form method="POST">
+			<input type="text" name="name" value="<?php echo (!empty($_POST['name']))?$_POST['name']:false;?>" /><br />
+			<input type="password" name="password" value="<?php echo (!empty($_POST['password']))?$_POST['password']:false;?>" /><br />
+			<input type="text" name="mail" value="<?php echo (!empty($_POST['mail']))?$_POST['mail']:false;?>" /><br />
+			<input type="submit" name="send" value="Register" /><br />
+		</form>
+	</body>
+</html>

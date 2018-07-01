@@ -1,0 +1,30 @@
+body {
+	margin: 10px auto;
+	padding: 0;
+	font: 80%/120% Arial, Helvetica, sans-serif;
+}
+
+#tab {
+	width: 275px;
+	background-color: red;
+	border-bottom-width: 5px;
+	align-content: center;
+}
+
+#inp {
+	margin-top: 100px;
+	margin-left: 800px;
+	border: 10px solid #ccc; 
+	padding: 3px; 
+	color: red; 
+	width: 15%; 
+	height: 123px;
+	background-color: yellow;
+	font-size: 40px;
+	font-weight: 100;
+}
+
+#googleMap p {
+	width: 50%;
+	height: 30%;
+}

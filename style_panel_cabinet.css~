@@ -1,0 +1,46 @@
+body {
+	margin: 0 auto;
+	padding: 0;
+	width: 570px;
+	font: 75%/120% Arial, Helvetica, sans-serif;
+}
+
+a:focus {
+	outline: none;
+}
+
+#panel {
+	background: #CC33FF;
+	height: 100px;
+	display: none;
+}
+
+.slide {
+	margin: 0;
+	padding: 0;
+	border-top: solid 5px #13ed13;
+	background-color: #FF0000 center top;
+	onclick: Location:http://localhost/site/ballance.php
+}
+
+.btn_slide {
+	background: #13ed13 no-repeat right -550px;
+	text-align: center;
+	width: 150px;
+	height: 50px;
+	padding: 20px 20px 0 0;
+	margin: 0 auto;
+	display: block;
+	font: bold 120%/100% Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: none;
+}
+
+.active {
+	background-position: right 15px;
+}
+
+
+#btn_play {
+	background-color: #CC33FF;
+}
