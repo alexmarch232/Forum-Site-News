@@ -49,7 +49,7 @@ a:focus {
 }
 
 #test {
-	color: red;
+	color: #fff;
 	border: 1px solid black;
 	width: 60px;
 	position: absolute;
@@ -58,19 +58,21 @@ a:focus {
 	
 }
 #aaa {
-	color: red;
+	color: #fff;
 	border: 1px solid black;
 	width: 60px;
 	position: absolute;
+	margin: 0 auto;
 	left: 80%;
 	bottom: 90%;
+	font: bold 120%/100% Arial, Helvetica, sans-serif;
 }
 
 #clock {
 	
 	color: #CC33FF;
-	border: 1px solid black;
-	font-size: 150%;
+	border: 4px solid black;
+	font-size: 250%;
 	position: absolute;
 	left: 95%;
 	top: 95%;

@@ -68,38 +68,38 @@
 <body onload="startTime()">
 	
 	
-<?php
-	include_once 'includes/session_cabinet.php';
-	include_once 'includes/connectDB.php';
+		<?php
+			include_once 'includes/session_cabinet.php';
+			include_once 'includes/connectDB.php';
 	
-	if( isset($_GET['logout']) && $_GET['logout']==md5($_SESSION['username']) ) {
-		$_SESSION['username']=null;
-		header("Location:http://localhost/site/login.php");	
-	}
-	if( isset( $_GET['log']) ){
-		echo "<script>alert(12345678);</script>";	
-	}
+			if( isset($_GET['logout']) && $_GET['logout']==md5($_SESSION['username']) ) {
+				$_SESSION['username']=null;
+				header("Location:http://localhost/site/login.php");	
+			}
+			if( isset( $_GET['log']) ){
+				echo "<script>alert(12345678);</script>";	
+			}
 	
-	if( isset($_POST['save']) && $_SERVER['REQUEST_METHOD']=="POST" ) {
-		$na = mysql_real_escape_string($_POST['name']);
-		$tt = mysql_real_escape_string($_POST['title']);
-		$mt = mysql_real_escape_string($_POST['mytext']);
-		$menu = mysql_real_escape_string($_POST['menu']);
-		$show = mysql_real_escape_string($_POST['show']);
+			if( isset($_POST['save']) && $_SERVER['REQUEST_METHOD']=="POST" ) {
+				$na = mysql_real_escape_string($_POST['name']);
+				$tt = mysql_real_escape_string($_POST['title']);
+				$mt = mysql_real_escape_string($_POST['mytext']);
+				$menu = mysql_real_escape_string($_POST['menu']);
+				$show = mysql_real_escape_string($_POST['show']);
 	
-		$sql = "INSERT INTO pages VALUES ('', '".$na."', '".$tt."', '".$mt."', '".$menu."', '".$show."')";	
+				$sql = "INSERT INTO pages VALUES ('', '".$na."', '".$tt."', '".$mt."', '".$menu."', '".$show."')";	
 		
-		if(mysql_query($sql)){
-			$_SESSION['succsess']='Data is save';
-			//header("Location:".$_SERVER['PHP_SELF']);
-			echo $_SESSION['succsess'];
-			$_SESSION['succsess']=null;
-			}	
-	}	
-								
-?>
+				if(mysql_query($sql)){
+					$_SESSION['succsess']='Data is save';
+					//header("Location:".$_SERVER['PHP_SELF']);
+					echo $_SESSION['succsess'];
+					$_SESSION['succsess']=null;
+					}	
+			}								
+		?>
+
 	
-	<a href="" id="aaa">Account:</a>	
+	<a href="https://myaccount.google.com/" id="aaa">Account:</a>	
 	
 	<div id="panel"></div>
 	<p class="slide">
