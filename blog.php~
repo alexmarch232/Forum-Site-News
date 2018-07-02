@@ -46,4 +46,4 @@
 	<input name="news_save" type="submit" value="Save"/>	
 </form>
 
-<a href="http://localhost/site/news.php">news/a>
+<a href="http://localhost/site/news.php">news</a>
