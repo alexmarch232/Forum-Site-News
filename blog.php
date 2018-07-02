@@ -33,6 +33,17 @@
 
 ?>
 
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta name="alexmarch232" content="root" charset="utf-8" />
+<title>Blog</title>
+			<h1>blog</h1>
+		</head>
+
+
+		<body>
+
 <br />
 <a href="?logout=<?php echo md5($_SESSION['username']);?>">Exit</a>
 
@@ -47,3 +58,7 @@
 </form>
 
 <a href="http://localhost/site/news.php">news</a>
+
+
+		</body>
+	</html>

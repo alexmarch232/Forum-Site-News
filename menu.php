@@ -10,6 +10,6 @@ if($menu){
 		while($res= mysql_fetch_assoc($menu)){
 			echo "<li><a href='http://localhost/site/?p=".$res['id_page']."'>".$res['name_page']."</a></li>";
 		}
-		echo "<li><a href='http://localhost/site/news.php'>Новини</a></li>";
+		echo "<li><a href='http://localhost/site/news.php'><h1>Новини</h1></a></li>";
 	echo "</ul>";	
 	}?>
